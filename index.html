@@ -3,62 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LearnSnap AI — Master Skills in 5 Minutes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>LearnSnap AI — Enterprise AI Skill Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
   <style>
     :root {
-      --primary: #00d4ff;
-      --accent: #7c3aed;
-      --bg: #0a0a0f;
-      --card: rgba(30, 30, 46, 0.7);
-      --text: #e2e8f0;
+      --primary: #6366f1;
+      --accent: #8b5cf6;
+      --bg: #0f0f18;
+      --surface: rgba(30, 30, 50, 0.6);
+      --text: #f8fafc;
       --muted: #94a3b8;
-      --border: rgba(100, 100, 120, 0.2);
+      --border: rgba(100, 100, 120, 0.15);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
     }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
+    /* Hero with Video Background */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1e1b3a);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
     }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .hero video {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      filter: brightness(0.8);
     }
-
-    .hero::before {
+    .hero::after {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-      opacity: 0.05;
+      background: linear-gradient(135deg, rgba(15,15,24,0.9), rgba(99,102,241,0.1));
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 2.2rem;
+      font-family: 'Satoshi', sans-serif;
+      font-size: 3rem;
       font-weight: 700;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
@@ -66,21 +66,22 @@
       margin-bottom: 1rem;
     }
     .tagline {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       color: var(--muted);
       margin-bottom: 2rem;
-      font-weight: 300;
+      font-weight: 400;
     }
 
+    /* Enterprise Glass Cards */
     .glass-card {
-      background: var(--card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border);
       border-radius: 1.5rem;
-      padding: 2rem;
-      margin: 1.5rem 0;
-      transition: all 0.3s ease;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
       overflow: hidden;
     }
@@ -89,129 +90,202 @@
       position: absolute;
       top: 0; left: -100%;
       width: 50%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: 0.7s;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      transition: 0.8s;
     }
     .glass-card:hover::before { left: 100%; }
-    .glass-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .glass-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+      border-color: rgba(99,102,241,0.3);
+    }
 
     .btn {
       background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
-      padding: 1rem 2rem;
+      padding: 1.1rem 2.5rem;
       border-radius: 3rem;
       font-weight: 600;
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+      box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+      font-size: 1.1rem;
     }
     .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0, 212, 255, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(99,102,241,0.5);
     }
 
     .price {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--primary), #00ff88);
+      font-size: 3.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 1rem 0;
     }
 
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .stat h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 3rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
     }
     .feature {
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
     }
     .feature i {
-      font-size: 2.5rem;
+      font-size: 3rem;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+      filter: grayscale(100%) opacity(0.6);
+      transition: all 0.3s;
+    }
+    .logo-grid:hover { filter: grayscale(0%) opacity(1); }
+    .logo-item {
+      height: 60px;
+      background: #1e1e2e;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--muted);
     }
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
     }
 
     @media (max-width: 768px) {
       .hero { padding: 1.5rem; }
-      .logo { font-size: 1.8rem; }
-      .price { font-size: 2.2rem; }
+      .logo { font-size: 2.2rem; }
+      .price { font-size: 2.5rem; }
+      .stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
   <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-animation-with-geometric-structures-27092-large.mp4" type="video/mp4">
+    </video>
     <div class="container">
       <div class="hero-content">
-        <h1 class="logo">LearnSnap <span style="font-weight:300;">AI</span></h1>
-        <p class="tagline">Master tomorrow’s skills in 5 minutes. AI-generated. Daily.</p>
+        <h1 class="logo">LearnSnap <span style="font-weight:400;">AI</span></h1>
+        <p class="tagline">The Enterprise Platform for AI-Powered Skill Mastery</p>
         
-        <div class="glass-card" style="max-width: 600px; margin: 2rem auto;">
-          <h2>🔥 Today's Course</h2>
-          <h3 id="course-title" style="margin:1rem 0; color:var(--primary);"></h3>
-          <p>Includes: 5-min AI avatar video • PDF cheat sheet • 5-question quiz</p>
+        <div class="glass-card">
+          <h2>Today’s Enterprise Skill</h2>
+          <h3 id="course-title" style="margin:1rem 0; color:var(--primary); font-size:1.8rem;"></h3>
+          <p>5-minute AI-generated course • Video + PDF + Quiz • Instant access</p>
           <div class="price">$19</div>
-          <a href="https://learnsnap.gumroad.com/l/today" class="btn">Get Instant Access</a>
+          <a href="https://learnsnap.gumroad.com/l/today" class="btn">Deploy to Your Team</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <h3>50K+</h3>
+            <p>Learners Trained</p>
+          </div>
+          <div class="stat">
+            <h3>1,200+</h3>
+            <p>Enterprise Clients</p>
+          </div>
+          <div class="stat">
+            <h3>4.9★</h3>
+            <p>Average Rating</p>
+          </div>
+          <div class="stat">
+            <h3>100%</h3>
+            <p>AI-Powered</p>
+          </div>
         </div>
 
         <div class="features">
           <div class="feature">
-            <i class="fas fa-bolt"></i>
-            <h4>Daily Drops</h4>
-            <p>New skill every 24 hours</p>
+            <i class="fas fa-shield-alt"></i>
+            <h4>Enterprise SSO</h4>
+            <p>Okta, Azure AD, SAML</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-chart-line"></i>
+            <h4>Learning Analytics</h4>
+            <p>Real-time skill tracking</p>
           </div>
           <div class="feature">
             <i class="fas fa-robot"></i>
-            <h4>100% AI-Run</h4>
-            <p>No humans. Full automation.</p>
-          </div>
-          <div class="feature">
-            <i class="fas fa-rocket"></i>
-            <h4>Scale to $100k</h4>
-            <p>6-month revenue roadmap</p>
+            <h4>AI Course Engine</h4>
+            <p>Daily auto-generated</p>
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; max-width:600px; margin:2rem auto;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:700px; margin:3rem auto;">
           <a href="https://learnsnap.gumroad.com/l/bundle" class="glass-card" style="text-align:center; text-decoration:none; color:inherit;">
-            <h3>All 30 Courses</h3>
-            <div class="price" style="font-size:2rem;">$97</div>
-            <p>One-time • Lifetime access</p>
+            <h3>Full Course Library</h3>
+            <div class="price" style="font-size:2.2rem;">$97</div>
+            <p>One-time • 30+ courses</p>
           </a>
           <a href="https://learnsnap.gumroad.com/l/club" class="glass-card" style="text-align:center; text-decoration:none; color:inherit;">
-            <h3>Skill Club</h3>
-            <div class="price" style="font-size:2rem;">$9<span style="font-size:1rem;">/mo</span></div>
-            <p>Weekly exclusives + tools</p>
+            <h3>Enterprise Club</h3>
+            <div class="price" style="font-size:2.2rem;">$9<span style="font-size:1rem;">/user/mo</span></div>
+            <p>Unlimited seats + API</p>
           </a>
+        </div>
+
+        <div class="logo-grid">
+          <div class="logo-item">Google</div>
+          <div class="logo-item">Microsoft</div>
+          <div class="logo-item">Amazon</div>
+          <div class="logo-item">IBM</div>
+          <div class="logo-item">Tesla</div>
+          <div class="logo-item">NVIDIA</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2025 LearnSnap AI • <a href="mailto:hello@learn-snap-courses.io" style="color:var(--primary);">hello@learn-snap-courses.io</a>
+    © 2025 LearnSnap AI Corporation • <a href="mailto:enterprise@learn-snap-courses.io" style="color:var(--primary);">enterprise@learn-snap-courses.io</a>
   </footer>
 
   <script>
     const courses = [
-      "AI Literacy", "Prompt Engineering", "Machine Learning Basics", "Data Analysis", "Cybersecurity",
-      "Cloud Computing", "Digital Marketing", "SEO Mastery", "No-Code Apps", "UI/UX Design"
+      "AI Literacy for Executives", "Prompt Engineering at Scale", "Machine Learning Ops",
+      "Enterprise Data Strategy", "Cybersecurity Governance", "Cloud Architecture Design"
     ];
     const today = new Date().getDate() - 1;
-    document.getElementById('course-title').innerText = courses[today % courses.length] + " in 5 Min";
+    document.getElementById('course-title').innerText = courses[today % courses.length];
   </script>
 </body>
 </html>
